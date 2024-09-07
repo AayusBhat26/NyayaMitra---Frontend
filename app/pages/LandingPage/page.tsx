@@ -10,15 +10,13 @@ export const HomePage = () => {
   useSmoothScroll();
   return (
     <div
-      id="section-container_main"
+      id=""
       className="hide-scrollbar relative overflow-hidden max-w-screen-[1536px] font-dmserif"
     >
-      <img
-        src="images/background.png"
-        alt="Background"
-        className="w-full h-auto min-h-screen object-cover"
-        style={{ position: "absolute", top: 0, left: 0 }}
-      />
+      <div
+        className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/background.png')" }}
+      ></div>
       <div className="relative z-10 text-white flare overflow-hidden">
         <div id="section-container" className="sectionContainer">
           {/* section 1 */}
