@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
-
-
-
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -48,13 +44,13 @@ export const NavigationItems = () => {
             {isMobile ? (
               // Mobile menu
               menuOpen && (
-                <div className="absolute right-0 top-full w-full bg-white text-[#DFC38A] rounded  mt-6 mr-5">
+                <div className="absolute right-0 top-full w-full bg-white text-[#DFC38A] rounded mt-6 mr-5">
                   <NavigationMenuList className="flex flex-col space-y-6">
                     {/* home */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
-                        className="px-4 py-2 hover:bg-gray-200 "
+                        className="px-4 py-2 hover:bg-gray-200"
                       >
                         Home
                       </NavigationMenuLink>
@@ -90,7 +86,7 @@ export const NavigationItems = () => {
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
-                        className="px-4 py-2 hover:bg-gray-200"
+                        className="px-4 py-2 hover:bg-gray-200 font-semibold text-[#4CAF50]"
                       >
                         Signup
                       </NavigationMenuLink>
@@ -99,7 +95,7 @@ export const NavigationItems = () => {
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
-                        className="px-4 py-2 hover:bg-gray-200"
+                        className="px-4 py-2 hover:bg-gray-200 font-semibold text-[#FF5722]"
                       >
                         Login
                       </NavigationMenuLink>
@@ -145,7 +141,7 @@ export const NavigationItems = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className="hover:text-gray-400"
+                    className="hover:text-gray-400 font-semibold p-1 text-[20px]"
                   >
                     Signup
                   </NavigationMenuLink>
@@ -153,7 +149,7 @@ export const NavigationItems = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className="hover:text-gray-400"
+                    className="hover:text-gray-400 font-semibold p-1 text-[20px]"
                   >
                     Login
                   </NavigationMenuLink>

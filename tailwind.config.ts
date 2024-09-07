@@ -9,6 +9,18 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		screens: {
+			'iphone-se': '320px',
+			'iphone-xr': '414px',
+			'iphone-12-pro': '390px',
+			'iphone-14-pro-max': '430px',
+			'pixel-7': '411px',
+			'galaxy-s8-plus': '360px',
+			'galaxy-s20-ultra': '320px',
+			'ipad-mini': '768px',
+			'ipad-air': '820px',
+			'ipad-pro': '1024px',
+		  },
 		fontFamily:{
 			dmserif: ['"DM Serif Text"', 'serif']
 		},

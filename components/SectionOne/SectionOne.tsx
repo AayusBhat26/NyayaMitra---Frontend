@@ -1,29 +1,54 @@
 import Image from "next/image";
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const SectionOne = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+
+    gsap.fromTo(
+      element,
+      { opacity: 0, scale: 0.8 }, // Initial state for fade-in
+      {
+        opacity: 1, // Final state for fade-in
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%',  // When the top of the section hits 80% of the viewport height
+          end: 'top 20%',    // When the top of the section hits 20% of the viewport height
+          toggleActions: 'play none none reverse', // Play animation when entering, reverse animation when exiting
+          scrub: true,
+        }
+      }
+    );
+  }, []);
+
   return (
     <>
-    <div className="relative  pt-10 pb-10 flex items-center  h-screen">
-      {/* #text section */}
-      <div className="flex-1 relative z-10 right-[-16.8%] hidden md:block text-[6rem] text-[#BA9359] ml-8 animate-up">
-        <p className="font-bold my-[0.625rem] ml-[-0.0.5rem]">
-          Uphold Truth For
-        </p>
-        <p className="font-bold leading-tight">Justice With</p>
-        <p className="font-bold leading-tight">NyayaMitra</p>
-      </div>
+      <div ref={sectionRef} className="relative section-three pt-10 flex justify-center items-center h-screen ">
+        {/* Text section */}
+        <div className="flex-1 relative z-10 hidden md:block text-[6rem] text-[#BA9359] ml-8 left-44 animate-up">
+          <p className="font-bold my-[0.625rem] ml-[-0.0.5rem]">Uphold Truth For</p>
+          <p className="font-bold leading-tight">Justice With</p>
+          <p className="font-bold leading-tight">NyayaMitra</p>
+        </div>
 
-      {/* #image Section */}
-      <div className="relative mr-8">
-        <Image
-          src={"/images/section1.png"}
-          width={600}
-          height={600}
-          alt="imageSectionOne"
-          className="relative z-0 left-[-50%]"
-        />
+        {/* Image Section */}
+        <div className="relative w-[800px] h-[600px]  top-0 right-44"> {/* Fixed dimensions for the image container */}
+          <Image
+            src={"/images/section1.png"}
+            layout="fill"
+            objectFit="cover" // Maintain aspect ratio while covering the container
+            alt="imageSectionOne"
+            className="relative w-[400px] h-[300px] rounded-sm " // Static size for the image
+          />
+        </div>
       </div>
-    </div>
     </>
   );
 };
