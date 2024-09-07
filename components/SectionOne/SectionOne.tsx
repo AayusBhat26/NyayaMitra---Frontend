@@ -3,7 +3,7 @@ import Image from "next/image";
 export const SectionOne = () => {
   return (
     <>
-    <div className="relative  pt-10 pb-10 flex items-center">
+    <div className="relative  pt-10 pb-10 flex items-center  h-screen">
       {/* #text section */}
       <div className="flex-1 relative z-10 right-[-16.8%] hidden md:block text-[6rem] text-[#BA9359] ml-8 animate-up">
         <p className="font-bold my-[0.625rem] ml-[-0.0.5rem]">

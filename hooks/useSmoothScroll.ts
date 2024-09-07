@@ -2,6 +2,28 @@
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
+const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
+
+gsap.registerPlugin(ScrollTrigger);
+
+export const createScrollAnimations = ()=>{
+  const sectionsTimeline = gsap.timeline({
+    scrollTrigger:{
+      trigger:'.sectionContainer', 
+      start:'top top', 
+      end: `+=${window.innerHeight * 2}`, 
+      scrub: 1,
+      pin: true,
+    },
+  });
+  sectionsTimeline
+.to('#section-one', { duration: 1, autoAlpha: 1, y: -window.innerHeight }, 0)
+.to('#section-two', { duration: 1, y: -window.innerHeight }, '+=1')
+.to('#section-three', { duration: 2, y: -window.innerHeight * 2 }, '+=2')
+.to('#section-four', { duration: 3, y: -window.innerHeight * 3 }, '+=1')
+.to('#section-container', { duration: 4, delay: 15, autoAlpha: 0, y: -window.innerHeight * 2 }, 0);
+};
+
 
 const useSmoothScroll = () => {
   useEffect(() => {
@@ -10,7 +32,6 @@ const useSmoothScroll = () => {
       infinite: false,
     });
 
-    const { ScrollTrigger } = require('gsap/dist/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     // Ensure the DOM is ready before initializing animations

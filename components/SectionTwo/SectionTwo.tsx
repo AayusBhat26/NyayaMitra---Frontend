@@ -1,37 +1,25 @@
-// components/SectionTwo/SectionTwo.tsx
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import Image from "next/image";
 
 export const SectionTwo = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = sectionRef.current;
-
-    gsap.fromTo(
-      element,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 80%',
-          end: 'bottom 60%',
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
   return (
-    <div ref={sectionRef} className="section-two min-h-screen flex items-center">
-      <h2>Section Two</h2>
-      <p>This is the content of Section Two.</p>
+    <div className="bg-black w-screen h-screen flex  justify-start">
+      {/* First subsection with image and about us */}
+      <div className="w-full h-full p-20 flex items-center justify-center">
+        <div className=" w-[90%] flex justify-center border-l-0 border-t-0 border-b-0 border border-r-[#DFC38A]">
+          <Image
+            src="/images/section2Image.jpg"
+            width={600}
+            height={600}
+            alt="Image"
+            className="mx-auto "
+          />
+        </div>
+
+        <div className="ml-8 text-center font-dmserif ">
+          <h2 className=" text-2xl text-start ml-[0.5rem] mb-[2rem] text-[#DFC38A]">About Us</h2>
+          <p className="text-left  text-[5rem] text-[#DFC38A] ">NyayaMitra is an AI chatbot and services platform.</p>
+        </div>
+      </div>
     </div>
   );
 };
