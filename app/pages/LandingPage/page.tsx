@@ -1,0 +1,37 @@
+"use client"
+import { SectionFour } from "@/components/SectionFour/SectionFour"
+import { SectionOne } from "@/components/SectionOne/SectionOne"
+import { SectionThree } from "@/components/SectionThree/SectionThree"
+import { SectionTwo } from "@/components/SectionTwo/SectionTwo"
+import useSmoothScroll from "@/hooks/useSmoothScroll"
+
+export const HomePage = () => {
+  useSmoothScroll();
+  return (
+    <div className="hide-scrollbar relative  overflow-hidden max-w-screen-[1536px] ">
+      <img
+      // w-full h-full min-h-screen
+        src="images/background.png"
+        alt="Background"
+        className="w-full h-auto min-h-screen object-cover"
+        style={{ position: 'absolute', top: 0, left: 0 }}
+      />
+      <div className="relative z-10 text-white flare">
+        <SectionOne />
+        <SectionTwo />
+        <SectionThree />
+        <SectionFour />
+      </div>
+
+      {/* Navigation Bar */}
+      <div
+        className="navbar fixed bottom-0 w-full text-white z-20 shadow-lg"
+      >
+        {/* Your Navigation Items */}
+        <nav >
+          {/* Navigation links or buttons go here */}
+        </nav>
+      </div>
+    </div>
+  );
+};
