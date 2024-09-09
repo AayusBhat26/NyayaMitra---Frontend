@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 export const NavigationItems = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -28,7 +28,7 @@ export const NavigationItems = () => {
 
   return (
     <div className="bg-black font-bold text-[#DFC38A] text-[16px]">
-      <nav className="container mx-auto px-5 py-3">
+      <nav className="container mx-auto px-5 py-3 relative">
         <div className="flex items-center justify-between">
           {/* Toggle Button for Mobile */}
           {isMobile && (
@@ -46,7 +46,6 @@ export const NavigationItems = () => {
               menuOpen && (
                 <div className="absolute right-0 top-full w-full bg-white text-[#DFC38A] rounded mt-6 mr-5">
                   <NavigationMenuList className="flex flex-col space-y-6">
-                    {/* home */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
@@ -55,7 +54,6 @@ export const NavigationItems = () => {
                         Home
                       </NavigationMenuLink>
                     </NavigationMenuItem>
-                    {/* about */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
@@ -64,7 +62,6 @@ export const NavigationItems = () => {
                         About
                       </NavigationMenuLink>
                     </NavigationMenuItem>
-                    {/* services */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
@@ -73,7 +70,6 @@ export const NavigationItems = () => {
                         Services
                       </NavigationMenuLink>
                     </NavigationMenuItem>
-                    {/* contact */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
@@ -82,7 +78,6 @@ export const NavigationItems = () => {
                         Contact
                       </NavigationMenuLink>
                     </NavigationMenuItem>
-                    {/* signup */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
@@ -91,13 +86,12 @@ export const NavigationItems = () => {
                         Signup
                       </NavigationMenuLink>
                     </NavigationMenuItem>
-                    {/* login */}
                     <NavigationMenuItem>
                       <NavigationMenuLink
                         href="#"
                         className="px-4 py-2 hover:bg-gray-200 font-semibold text-[#FF5722]"
                       >
-                        Login
+                        Login 
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   </NavigationMenuList>
@@ -105,7 +99,7 @@ export const NavigationItems = () => {
               )
             ) : (
               // Desktop menu
-              <NavigationMenuList className="flex space-x-4">
+              <NavigationMenuList className="flex space-x-4 items-center">
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
@@ -141,17 +135,17 @@ export const NavigationItems = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className="hover:text-gray-400 font-semibold p-1 text-[20px]"
+                    className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2 text-[20px] bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50 "
                   >
-                    Signup
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="#"
-                    className="hover:text-gray-400 font-semibold p-1 text-[20px]"
-                  >
-                    Login
+                    <span className="text-black ">Get Started</span>
+                    <Image
+                      src="/images/rightArrow.png"
+                      width={20}
+                      height={20}
+                      alt="right_Arrow" 
+                      
+                    />
+                    
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>

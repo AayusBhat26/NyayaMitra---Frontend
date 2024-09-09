@@ -10,7 +10,6 @@ export const HomePage = () => {
   useSmoothScroll();
   return (
     <div
-      id=""
       className="hide-scrollbar relative overflow-hidden max-w-screen-[1536px] font-dmserif"
     >
       <div
@@ -37,7 +36,7 @@ export const HomePage = () => {
           {/* section 4 */}
           <section>
             <SectionFour />
-            <hr className="w-24 border-t border-[#BA9359] mx-auto my-8" />
+            {/* <hr className="w-24 border-t border-[#BA9359] mx-auto my-8" /> */}
           </section>
         </div>
       </div>
