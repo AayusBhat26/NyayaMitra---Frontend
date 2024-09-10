@@ -6,6 +6,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import Modal_auth from "@/components/Modal_auth";
 
 export const NavigationItems = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -137,14 +138,9 @@ export const NavigationItems = () => {
                     href="#"
                     className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2 text-[20px] bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50 "
                   >
-                    <span className="text-black ">Get Started</span>
-                    <Image
-                      src="/images/rightArrow.png"
-                      width={20}
-                      height={20}
-                      alt="right_Arrow" 
-                      
-                    />
+                    {/* <span className="text-black ">Get Started</span> */}
+                    <Modal_auth/>
+                    
                     
                   </NavigationMenuLink>
                 </NavigationMenuItem>
