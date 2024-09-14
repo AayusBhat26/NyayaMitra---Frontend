@@ -50,8 +50,8 @@ export const SectionTwo = () => {
     <div className="bg-black rounded-lg section-three" ref={sectionRef}>
       <div className="w-screen h-screen flex justify-start">
         {/* First subsection with image and about us */}
-        <div className="w-full h-full p-20 flex items-center justify-center">
-          <div className="w-[90%] flex justify-center border-l-0 border-t-0 border-b-0 border border-r-[#DFC38A]">
+        <div className="w-full h-full p-20 flex lg:flex-row flex-col items-center justify-center">
+          <div className="w-[90%] flex justify-center border-l-0 border-t-0 border-b-0 border border-r-0 border-b-[#DFC38A]  lg:border-r-[#DFC38A]">
             <Image
               src="/images/section2Image.jpg"
               width={600}
@@ -62,7 +62,7 @@ export const SectionTwo = () => {
           </div>
 
           <div className="ml-8 text-center font-dmserif">
-            <h2 className="text-2xl text-start ml-[0.5rem] mb-[2rem] text-[#DFC38A]">
+            <h2 className="text-2xl  ml-[0.5rem] text-center lg:text-left mb-[2rem] text-[#DFC38A] mt-4 lg:mt-0">
               About Us
             </h2>
             <p className="text-left text-[5rem] text-[#DFC38A]">

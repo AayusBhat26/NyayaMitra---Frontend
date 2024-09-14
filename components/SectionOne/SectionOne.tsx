@@ -32,14 +32,21 @@ export const SectionOne = () => {
     <>
       <div ref={sectionRef} className="relative section-three pt-10 flex justify-center items-center h-screen ">
         {/* Text section */}
-        <div className="flex-1 relative z-10 hidden md:block text-[6rem] text-[#BA9359] ml-8 left-44 animate-up">
+        <div className="flex-1 relative z-10 hidden lg:block text-[6rem] text-[#BA9359] ml-8 left-44 animate-up">
           <p className="font-bold my-[0.625rem] ml-[-0.0.5rem]">Uphold Truth For</p>
           <p className="font-bold leading-tight">Justice With</p>
           <p className="font-bold leading-tight">NyayaMitra</p>
         </div>
 
+        <div className="flex-1 absolute z-10 lg:hidden block text-[4rem] text-[#BA9359] animate-up bg-black opacity-75 p-4 rounded-md">
+        <p className="font-bold my-[0.625rem] ml-[-0.0.5rem]">Uphold Truth For</p>
+          <p className="font-bold leading-tight">Justice With</p>
+          <p className="font-bold leading-tight">NyayaMitra</p>
+        </div>
+
+
         {/* Image Section */}
-        <div className="relative w-[800px] h-[600px]  top-0 right-44"> {/* Fixed dimensions for the image container */}
+        <div className="relative lg:w-[800px] lg:h-[600px] flex w-full h-full justify-center  top-0 lg:right-44"> {/* Fixed dimensions for the image container */}
           <Image
             src={"/images/section1.png"}
             layout="fill"
