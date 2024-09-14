@@ -5,7 +5,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
+
 import Modal_auth from "@/components/Modal_auth";
 
 export const NavigationItems = () => {
@@ -103,16 +103,8 @@ export const NavigationItems = () => {
               <NavigationMenuList className="flex space-x-4 items-center">
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="#"
-                    className="hover:text-gray-400"
-                  >
-                    Home
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="#"
-                    className="hover:text-gray-400"
+                    href="/#about_us"
+                    className="hover:text-gray-400 text-[1.2rem]"
                   >
                     About
                   </NavigationMenuLink>
@@ -122,7 +114,10 @@ export const NavigationItems = () => {
                     href="#"
                     className="hover:text-gray-400"
                   >
-                    Services
+                      <p   className="flex items-center space-x-2 hover:text-gray-400 font-semibold  text-[1.2rem] text-[#DFC38A] rounded-md   ">
+                      Services
+                      {/* hover:bg-[#BA9359] transition ease-in-out delay-50 */}
+                    </p>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
@@ -130,13 +125,15 @@ export const NavigationItems = () => {
                     href="#"
                     className="hover:text-gray-400"
                   >
-                    Contact
+                    <p   className="flex items-center space-x-2 hover:text-gray-400 font-semibold  p-[0.8rem] text-lg  bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50 text-black ">
+                      Chatbot
+                    </p>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2 text-[20px] bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50 "
+                    className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2  bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50 "
                   >
                     {/* <span className="text-black ">Get Started</span> */}
                     <Modal_auth/>

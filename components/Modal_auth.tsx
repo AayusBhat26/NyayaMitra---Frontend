@@ -206,7 +206,7 @@ const ModalAuth: React.FC = () => {
       <DialogTrigger asChild>
         <div>
           <Button className="font-semibold text-lg text-black bg-[#DFC38A] hover:bg-[#BA9359] rounded-md">
-            Get Started
+            Signup
             <Image
               src="/images/rightArrow.png"
               width={20}

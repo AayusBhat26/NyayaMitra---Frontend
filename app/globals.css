@@ -36,6 +36,7 @@ html, body{
   font-family: "DM Serif Text", serif;
   
 }
+
 /* html{
   scroll-snap-type: y mandatory;
   scroll-padding-top:30px
@@ -155,6 +156,9 @@ section{
     --chart-4:280 65% 60%;
     --chart-5:340 75% 55%;
   }
+}
+*{
+  scroll-behavior: smooth;
 }
 @layer base {
   * {

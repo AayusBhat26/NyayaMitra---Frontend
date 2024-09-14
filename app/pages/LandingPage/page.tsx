@@ -24,7 +24,7 @@ export const HomePage = () => {
             <hr className="w-24 border-t border-[#BA9359] mx-auto my-8" />
           </section>
           {/* section 2 */}
-          <section>
+          <section id="about_us">
             <SectionTwo />
             <hr className="w-24 border-t border-[#BA9359] mx-auto my-8" />
           </section>
