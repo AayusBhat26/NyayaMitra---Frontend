@@ -14,6 +14,12 @@ export const ModalSection = () => {
   const [mouseDownAt, setMouseDownAt] = useState(0);
   const [prevPercentage, setPrevPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
+  const imageArray = ["/images/chatbot_image.jpg","/images/lawyer_dashboard.jpg","/images/traffic_challan.png", ]
+  const imageObject = {
+    "Chatbot": imageArray[0],
+    "Lawyer Dashboard": imageArray[1],
+    "Traffic Challan": imageArray[2],
+  }
 
   // Handle the drag functionality
   useEffect(() => {
@@ -48,22 +54,22 @@ export const ModalSection = () => {
     };
   }, [mouseDownAt, prevPercentage, percentage]);
 
-  // Handle button click functionality
   const handleMoveLeft = () => {
-    const nextPercentage = Math.min(percentage + 20, 0); // Adjust the value as per the movement
+    const nextPercentage = Math.max(percentage - 20, -100); // Decrease percentage to move left
     setPercentage(nextPercentage);
     if (trackRef.current) {
       trackRef.current.style.transform = `translate(${nextPercentage}%, -50%)`;
     }
   };
-
+  
   const handleMoveRight = () => {
-    const nextPercentage = Math.max(percentage - 20, -100); // Adjust the value as per the movement
+    const nextPercentage = Math.min(percentage + 20, 0); // Increase percentage to move right
     setPercentage(nextPercentage);
     if (trackRef.current) {
       trackRef.current.style.transform = `translate(${nextPercentage}%, -50%)`;
     }
   };
+  
 
   return (
     <Dialog>
@@ -79,21 +85,24 @@ export const ModalSection = () => {
           id="imageWrapper"
           style={{ transform: `translate(${percentage}%, -50%)` }}
         >
-          {Array.from({ length: 10 }).map((_, index) => (
+          {Object.entries(imageObject).map(([name, src]) => (
+            <div className="h-full w-full relative  overflow-hidden">
+              <div key={name} className="flex flex-col items-center   ">
             <Image
-              key={index}
-              src="/images/services_first_image.jpg"
-              alt={`Image ${index + 1}`}
+              src={src}
+              alt={name}
               width={400}
               height={300}
-              className="image w-[40vmin] h-[56vmin] object-cover object-center rounded-sm"
-              draggable={"false"}
+              className="w-[50vmin] h-[56vmin] object-cover object-center rounded-md hover:scale-110 transition brightness-50 hover:brightness-75"
             />
+            {/* <div className="inset-0 h-full w-full absolute top-0 bottom-0 bg-black opacity-40 hover:opacity-20"></div> */}
+            <p className="text-white text-lg mt-2 absolute bottom-0 bg-black bg-opacity-75 w-full text-center p-2 ">{name}</p>
+          </div>
+            </div>
           ))}
-          
         </div>
         {/* Buttons for left and right movement */}
-        <div className="flex gap-4   h-full items-end">
+        <div className="flex gap-4 h-full items-end">
           <Button onClick={handleMoveLeft} variant="ghost" className="text-white bg-black px-4 py-2">
             Move Left
           </Button>
