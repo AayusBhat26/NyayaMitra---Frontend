@@ -157,6 +157,24 @@ section{
     --chart-5:340 75% 55%;
   }
 }
+#imageWrapper > .image{
+  width:40vmin;
+  height:56vmin; 
+  object-fit:cover;
+  object-position: center;
+  user-select:none;
+  -webkit-user-drag:none;
+  outline:none;
+}
+#imageWrapper{
+  display:flex;
+  gap:4vmin;
+  position: absolute;
+  left:30%;
+  top:50%;
+  transform: translate(0%, -50%);
+  outline:none;
+}
 *{
   scroll-behavior: smooth;
 }

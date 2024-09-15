@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import Modal_auth from "@/components/Modal_auth";
+import { ModalSection } from "@/components/Modal_Section";
 
 export const NavigationItems = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -109,17 +110,15 @@ export const NavigationItems = () => {
                     About
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+              <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className="hover:text-gray-400"
+                    className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2  bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50  "
                   >
-                      <p   className="flex items-center space-x-2 hover:text-gray-400 font-semibold  text-[1.2rem] text-[#DFC38A] rounded-md   ">
-                      Services
-                      {/* hover:bg-[#BA9359] transition ease-in-out delay-50 */}
-                    </p>
+                    <ModalSection/>
+                    
                   </NavigationMenuLink>
-                </NavigationMenuItem>
+                </NavigationMenuItem> 
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
