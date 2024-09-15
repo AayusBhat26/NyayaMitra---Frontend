@@ -15,6 +15,7 @@ export const ModalSection = () => {
   const [prevPercentage, setPrevPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
 
+  // Handle the drag functionality
   useEffect(() => {
     const handleMouseDown = (e: MouseEvent) => {
       setMouseDownAt(e.clientX);
@@ -47,6 +48,23 @@ export const ModalSection = () => {
     };
   }, [mouseDownAt, prevPercentage, percentage]);
 
+  // Handle button click functionality
+  const handleMoveLeft = () => {
+    const nextPercentage = Math.min(percentage + 20, 0); // Adjust the value as per the movement
+    setPercentage(nextPercentage);
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translate(${nextPercentage}%, -50%)`;
+    }
+  };
+
+  const handleMoveRight = () => {
+    const nextPercentage = Math.max(percentage - 20, -100); // Adjust the value as per the movement
+    setPercentage(nextPercentage);
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translate(${nextPercentage}%, -50%)`;
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -54,11 +72,10 @@ export const ModalSection = () => {
           Services
         </Button>
       </DialogTrigger>
-      <DialogContent className="min-w-full h-full bg-black bg-opacity-[0.2] m-0 overflow-hidden flex justify-center items-center">
+      <DialogContent className="min-w-full h-full bg-black bg-opacity-[0.2] m-0 overflow-hidden flex flex-col justify-center items-center">
         <div
           ref={trackRef}
-          className=" flex gap-4 transition-transform duration-1000"
-          data-mouse-down-at="0"
+          className="flex gap-4 transition-transform duration-1000"
           id="imageWrapper"
           style={{ transform: `translate(${percentage}%, -50%)` }}
         >
@@ -73,6 +90,16 @@ export const ModalSection = () => {
               draggable={"false"}
             />
           ))}
+          
+        </div>
+        {/* Buttons for left and right movement */}
+        <div className="flex gap-4   h-full items-end">
+          <Button onClick={handleMoveLeft} variant="ghost" className="text-white bg-black px-4 py-2">
+            Move Left
+          </Button>
+          <Button onClick={handleMoveRight} variant="ghost" className="text-white bg-black px-4 py-2">
+            Move Right
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
