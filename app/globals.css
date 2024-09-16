@@ -7,6 +7,14 @@
 .poppinClass{
   font-family: "Poppins", sans-serif;
 }
+
+::selection {
+  background: transparent; 
+  color: transparent; 
+}
+body {
+  user-select: none;
+}
 /* Styling the entire scrollbar */
 ::-webkit-scrollbar {
   width: 12px; /* Width of the scrollbar */
