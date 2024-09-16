@@ -78,7 +78,7 @@ export const ModalSection = () => {
           Services
         </Button>
       </DialogTrigger>
-      <DialogContent className="min-w-full h-full bg-black bg-opacity-[0.2] m-0 overflow-hidden flex flex-col justify-center items-center">
+      <DialogContent className="  min-w-full h-full bg-black bg-opacity-[0.2] m-0 overflow-hidden flex flex-col justify-center items-center">
         <div
           ref={trackRef}
           className="flex gap-4 transition-transform duration-1000"

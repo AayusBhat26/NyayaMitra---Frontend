@@ -8,6 +8,7 @@ import {
 
 import Modal_auth from "@/components/Modal_auth";
 import { ModalSection } from "@/components/Modal_Section";
+import { ModalServices } from "@/components/Modal_Services";
 
 export const NavigationItems = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -115,7 +116,8 @@ export const NavigationItems = () => {
                     href="#"
                     className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2  bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50  "
                   >
-                    <ModalSection/>
+                    {/* <ModalSection/> */}
+                    <ModalServices/>
                     
                   </NavigationMenuLink>
                 </NavigationMenuItem> 
