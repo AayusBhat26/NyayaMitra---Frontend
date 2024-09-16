@@ -3,6 +3,7 @@ import { Sidebar } from "@/components/ui/Sidebar";
 import { Menu, NotebookPen } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -38,7 +39,9 @@ const Page = () => {
 
         {/* Logo */}
         <div className="w-1/3 p-2 mt-1 flex justify-center">
-          <Image src={"/images/Logo.png"} alt="logo" width={200} height={200} />
+        <Link href={'/'}>
+        <Image src={"/images/Logo.png"}  alt="logo" width={200} height={200} />
+        </Link>
         </div>
 
         {/* Right-side icon */}
