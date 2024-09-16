@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +47,11 @@ export const SectionThree = () => {
         </div>
         {/* button div */}
         <div className="mt-10 ">
-        <Button variant={"default"} className="hover:bg-[#C3A971] bg-[#DFC38A] text-[#000000] text-2xl p-[2rem]">Start Now</Button>
+        <Button variant={"default"} className="hover:bg-[#C3A971] bg-[#DFC38A] text-[#000000] text-2xl p-[2rem]">
+          <Link href={"/chatbot"}>
+          Start Now
+          </Link>
+        </Button>
         </div>
       </div>
     </div>

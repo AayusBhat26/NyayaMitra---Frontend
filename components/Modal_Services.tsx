@@ -64,13 +64,13 @@ export  const ModalServices = ()=> {
   ];
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-      <Button variant={"ghost"} className="text-black text-xl font-bold hover:bg-transparent">
-          Services
-        </Button>
-      </DialogTrigger>
-      <DialogContent ref={container} className={styles.container}>
+    // <Dialog>
+    //   <DialogTrigger asChild>
+    //   <Button variant={"ghost"} className="text-black text-xl font-bold hover:bg-transparent">
+    //       Services
+    //     </Button>
+    //   </DialogTrigger>
+    //   <DialogContent ref={container} className={styles.container}>
         <div ref={container} className={styles.container}>
           <div className={styles.sticky}>
             {pictures.map(({ src, scale }, index) => {
@@ -84,7 +84,7 @@ export  const ModalServices = ()=> {
             })}
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+    //   </DialogContent>
+    // </Dialog>
   );
 }

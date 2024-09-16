@@ -5,6 +5,7 @@ import { SectionThree } from "@/components/SectionThree/SectionThree";
 import { SectionTwo } from "@/components/SectionTwo/SectionTwo";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import "../../../app/globals.css";
+import { ModalServices } from "@/components/Modal_Services";
 
 export const HomePage = () => {
   useSmoothScroll();
@@ -31,6 +32,7 @@ export const HomePage = () => {
           {/* section 3 */}
           <section>
             <SectionThree />
+            {/* <ModalServices/> */}
             <hr className="w-24 border-t border-[#BA9359] mx-auto my-8" />
           </section>
           {/* section 4 */}

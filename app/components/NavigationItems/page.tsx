@@ -113,20 +113,21 @@ export const NavigationItems = () => {
                 </NavigationMenuItem>
               <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="#"
-                    className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2  bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50  "
+                    href="/services"
+                    className="flex items-center space-x-2 hover:text-gray-400 font-semibold p-2 text-[1.2rem] transition ease-in-out delay-50  "
                   >
                     {/* <ModalSection/> */}
-                    <ModalServices/>
+                    Services
+                    {/* <ModalServices/> */}
                     
                   </NavigationMenuLink>
                 </NavigationMenuItem> 
                 <NavigationMenuItem>
                   <NavigationMenuLink
-                    href="#"
+                    href="/chatbot"
                     className="hover:text-gray-400"
                   >
-                    <p   className="flex items-center space-x-2 hover:text-gray-400 font-semibold  p-[0.8rem] text-lg  bg-[#DFC38A] rounded-md hover:bg-[#BA9359] transition ease-in-out delay-50 text-black ">
+                    <p   className="flex items-center space-x-2  font-semibold   text-[1.2rem] hover:text-gray-400 text-[#DFC38A]  transition ease-in-out delay-50  ">
                       Chatbot
                     </p>
                   </NavigationMenuLink>
