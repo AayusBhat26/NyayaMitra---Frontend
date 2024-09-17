@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export const Logo = () => {
   return (
     <div className="flex items-center ml-10">
-      <img
+      <Image
         src="images/Logo.png" // Update this path as necessary
         alt="logo"
         className="w-44 h-auto md:w-52"

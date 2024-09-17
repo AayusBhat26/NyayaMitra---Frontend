@@ -8,8 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import Modal_auth from "@/components/Modal_auth";
-import { ModalSection } from "@/components/Modal_Section";
-import { ModalServices } from "@/components/Modal_Services";
+
 
 export const NavigationItems = () => {
   const [isMobile, setIsMobile] = useState(false);

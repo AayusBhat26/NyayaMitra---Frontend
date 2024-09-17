@@ -12,7 +12,7 @@ const currentCases = [
 ];
 
 export const Sidebar = () => {
-  const [activeCase, setActiveCase] = useState(null); // To track the active case
+  const [activeCase, setActiveCase] = useState(1); // To track the active case
 
   return (
     <div className="text-black  bg-[#BA9359] h-full">
@@ -41,11 +41,11 @@ export const Sidebar = () => {
             <li
               key={caseItem.id}
               className={`text-black flex items-center cursor-pointer p-2 rounded-lg transition-all duration-300 ease-in-out ${
-                activeCase === caseItem.id
+                activeCase === caseItem.id || 1
                   ? "bg-[#DFC38A] text-black"
                   : "text-[#DFC38A] hover:bg-[#DFC38A] hover:text-black"
               }`}
-            //   onClick={() => setActiveCase(caseItem.id)} // Set active case on click
+              onClick={() => setActiveCase(caseItem.id)} // Set active case on click
             >
               {/* Left-side Icon */}
               <MessageSquare className="mr-2 w-5 h-5" />

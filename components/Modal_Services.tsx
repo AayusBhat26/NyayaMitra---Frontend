@@ -1,4 +1,3 @@
-import styles from "./styles.module.scss";
 import Picture1 from "../public/images/1.png";
 import Picture2 from "../public/images/2.jpeg";
 import Picture3 from "../public/images/3.jpg";

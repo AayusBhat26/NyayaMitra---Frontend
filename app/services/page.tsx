@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 import { useRouter } from "next/navigation";
 import styles from "./styles.module.scss";
@@ -8,9 +8,7 @@ import Picture1 from "../../public/images/1.png";
 import Picture2 from "../../public/images/laywer_dashboard.png";
 import Picture3 from "../../public/images/doj.jpg";
 import Picture4 from "../../public/images/traffic_challan.png";
-// import Picture5 from "../../public/images/sectionImage.png";
-// import Picture6 from "../../public/images/section2Image.jpg";
-// import Picture7 from "../../public/images/background.png";
+
 import Image from "next/image";
 import { X } from "lucide-react";
 
@@ -25,23 +23,16 @@ const ModalServices = () => {
   const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
   const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
   const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
-
   useMotionValueEvent(scale4, "change", (latest) => {
     if (latest >= 3.8) { // 3.8 is approximately 95% of 4 (the max scale)
       router.push("/chatbot");
     }
   });
-
   const pictures = [
     { src: Picture1, scale: scale4 },
     { src: Picture2, scale: scale5 },
     { src: Picture3, scale: scale6 },
     { src: Picture4, scale: scale5 },
-    // { src: Picture5, scale: scale6 },
-    // { src: Picture6, scale: scale8 },
-    // { src: Picture7, scale: scale9 },
   ];
 
   return (
@@ -56,8 +47,9 @@ const ModalServices = () => {
       <div className={styles.sticky}>
         {pictures.map(({ src, scale }, index) => (
           <motion.div key={index} style={{ scale }} className={styles.el}>
-            <div className={styles.imageContainer}>
+            <div key={index} className={styles.imageContainer}>
               <Image
+              key={index}
                 src={src}
                 fill
                 alt="image"

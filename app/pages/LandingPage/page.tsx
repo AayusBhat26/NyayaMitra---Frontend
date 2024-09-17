@@ -5,8 +5,6 @@ import { SectionThree } from "@/components/SectionThree/SectionThree";
 import { SectionTwo } from "@/components/SectionTwo/SectionTwo";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import "../../../app/globals.css";
-import { ModalServices } from "@/components/Modal_Services";
-
 export const HomePage = () => {
   useSmoothScroll();
   return (
