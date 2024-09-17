@@ -86,10 +86,11 @@ export const ModalSection = () => {
           style={{ transform: `translate(${percentage}%, -50%)` }}
         >
           {Object.entries(imageObject).map(([name, src]) => (
-            <div className="h-full w-full relative  overflow-hidden">
+            <div key={name} className="h-full w-full relative  overflow-hidden">
               <div key={name} className="flex flex-col items-center   ">
             <Image
               src={src}
+              key={name}
               alt={name}
               width={400}
               height={300}
