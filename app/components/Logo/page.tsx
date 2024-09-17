@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Logo = () => {
+const Logo = () => {
   return (
     <div className="flex items-center ml-10">
       <Image
@@ -12,3 +12,4 @@ export const Logo = () => {
     </div>
   );
 };
+export default Logo;
