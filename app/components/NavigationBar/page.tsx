@@ -1,5 +1,5 @@
 "use client";
-import { Logo } from "../Logo/page";
+import Logo  from "../Logo/page";
 import { NavigationItems } from "../NavigationItems/page";
 
 export const NavigationBar = () => {
