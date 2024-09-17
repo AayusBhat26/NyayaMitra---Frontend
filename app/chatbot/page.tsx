@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Page = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   // Update screen size status on mount and window resize
